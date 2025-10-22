@@ -16,32 +16,19 @@ repos:
       - id: trailing-whitespace
 
   # -------------------------
-  # 2. Linting - Spotless
-  # -------------------------
-  - repo: local
-    hooks:
-      - id: spotless-check
-        name: Gradle Spotless (format checker)
-        entry: bash -c "./gradlew spotlessCheck"
-        language: system
-        types: [java]
-        pass_filenames: false
-
-      - id: spotless-apply
-        name: Gradle Spotless (auto format)
-        entry: bash -c "./gradlew spotlessApply"
-        language: system
-        types: [java]
-        pass_filenames: false
-
-  # -------------------------
-  # 3. Java - Check Code quality
+  # 2. Java - Check Code quality
   # -------------------------
   - repo: local
     hooks:
       - id: code-quality
-        name: Gradle Code Quality (Spotless + Checkstyle + SpotBugs + PMD)
-        entry: bash -c "./gradlew codeQuality"
+        name: Gradle Code Quality
+        entry: python
+        args:
+          - -c
+          - |
+            import os, subprocess, sys
+            cmd = 'gradlew.bat' if os.name == 'nt' else './gradlew'
+            sys.exit(subprocess.run([cmd, 'codeQuality']).returncode)
         language: system
-        types: [java]
         pass_filenames: false
+        always_run: true
