@@ -8,10 +8,10 @@ repository:
   description: Java Feature Rich Development template to start with in your own project
 
   # A URL with more information about the repository
-  homepage: https://github.com/Bit-Maximum/FastAPI-Feature-rich-Template
+  homepage: https://github.com/Bit-Maximum/Java-Feature-Rich-Development-Setup
 
   # A comma-separated list of topics to set on the repository
-  topics: python, docker, kubernetes, redis, backend, rest-api, postgresql, traefik, rebbitmq, fastapi
+  topics: java, docker, kubernetes, redis, backend, rest-api, postgresql, traefik, rebbitmq, fastapi
 
   # Either `true` to make the repository private, or `false` to make it public.
   private: false
