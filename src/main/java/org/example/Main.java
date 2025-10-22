@@ -2,7 +2,6 @@ package org.example;
 
 // TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-
 /**
  * Entry point class demonstrating basic console output and a simple for-loop. Prints a greeting,
  * then iterates from 1 to 5, outputting the current index on each line. Uses IO.println for
