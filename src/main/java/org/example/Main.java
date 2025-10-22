@@ -13,7 +13,7 @@ public final class Main {
 
     static void main() {
 
-        IO.println(String.format("Hello, welcome!"));
+        IO.println(String.format("Hello, super welcome!"));
 
         for (int i = 1; i <= 5; i++) {
             IO.println("i = " + i);
