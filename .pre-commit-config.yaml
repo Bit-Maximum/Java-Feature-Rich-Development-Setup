@@ -1,0 +1,47 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+repos:
+  # -------------------------
+  # 1. Basic
+  # -------------------------
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-yaml
+      - id: check-json
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  # -------------------------
+  # 2. Linting - Spotless
+  # -------------------------
+  - repo: local
+    hooks:
+      - id: spotless-check
+        name: Gradle Spotless (format checker)
+        entry: bash -c "./gradlew spotlessCheck"
+        language: system
+        types: [java]
+        pass_filenames: false
+
+      - id: spotless-apply
+        name: Gradle Spotless (auto format)
+        entry: bash -c "./gradlew spotlessApply"
+        language: system
+        types: [java]
+        pass_filenames: false
+
+  # -------------------------
+  # 3. Java - Check Code quality
+  # -------------------------
+  - repo: local
+    hooks:
+      - id: code-quality
+        name: Gradle Code Quality (Spotless + Checkstyle + SpotBugs + PMD)
+        entry: bash -c "./gradlew codeQuality"
+        language: system
+        types: [java]
+        pass_filenames: false
