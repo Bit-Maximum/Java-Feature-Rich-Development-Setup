@@ -1,16 +1,30 @@
-[*.{kt,kts}]
-indent_size=4
+root = true
+
+[*]
+tab_width = 4
+end_of_line = lf
+max_line_length = 100
+ij_visual_guides = 100
 insert_final_newline = true
-ij_kotlin_imports_layout=*
-ktlint_code_style=intellij_idea
-ktlint_function_naming_ignore_when_annotated_with = Composable
-max_line_length = 120
+trim_trailing_whitespace = true
 
-# Do not apply the general rule to generated files
-[**/generated/**/*.{kt,kts}]
-indent_size = unset
-max_line_length = unset
-insert_final_newline = unset
+[*.{js,py,html}]
+charset = utf-8
 
-[**/*{t,T}est/kotlin/**.kt]
-ktlint_standard_class-signature = disabled
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+
+[.flake8]
+indent_style = space
+indent_size = 2
+
+[*.py]
+indent_style = space
+indent_size = 4
